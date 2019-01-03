@@ -1,6 +1,9 @@
 for (var i = 0; i < document.querySelectorAll(".drum").length; i++){
+  
   document.querySelectorAll(".drum")[i].addEventListener("click", function() {
+    
     this.style.color = "red";
+    
     switch(this.id){
       case "w":
         var drum_sound = new Audio("sounds/crash.mp3").play();
