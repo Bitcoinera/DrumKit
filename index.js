@@ -57,6 +57,18 @@ function changeColor(key){
   }
 }
 
+//animation when button gets pressed
+function buttonAnimation(eventKey){
+
+  activeButton = document.querySelector("." + eventKey);
+
+  activeButton.classList.add("pressed");
+
+  var removeClass_CountDown = setTimeout(function(){
+    activeButton.classList.remove("pressed");
+		}, 500);
+}
+
 //when clicking buttons each drum sound is played
 for (var i = 0; i < document.querySelectorAll(".drum").length; i++){
 
@@ -65,14 +77,20 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++){
     this.style.color = "red";
   
     getSound(this.id);
+
+    buttonAnimation(this.id);
   })
 }
 
-//when pressing every key matching the buttons letters the corresponding drum sound is played
+//detecting matching keys the corresponding drum sound is played
   document.addEventListener("keypress", function(e){
-    
+
     changeColor(e.key);
 
     getSound(e.key);
+
+    buttonAnimation(e.key);
   })
 
+
+     
