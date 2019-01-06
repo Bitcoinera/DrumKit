@@ -29,7 +29,7 @@ function getSound(button){
 }
 
 //this function will change the button color to yellow when matching keys are pressed
-function changeColor(key){
+function changeColorToYellow(key){
   switch(key){
     case "w":
       document.querySelectorAll(".drum")[0].style.color = "yellow";
